@@ -2,8 +2,8 @@ class ListsController < ApplicationController
 
 
   def index
-    @list = List.new
     @lists = List.all
+    @list = List.new
   end
 
   def create
