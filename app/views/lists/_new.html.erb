@@ -1,0 +1,7 @@
+<h1>今日の献立は？</h1>
+<%= form_with model: list, local:true do |f| %>
+  <%= f.text_area :body %><br>
+
+  <%= f.submit '投稿！' %>
+
+<% end %>

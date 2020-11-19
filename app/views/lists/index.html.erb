@@ -1,0 +1,6 @@
+<%= render 'lists/new', list: @list%>
+
+<h1>献立一覧</h1>
+<% @lists.each do |list| %>
+  <%= list.body %>
+<% end %>
