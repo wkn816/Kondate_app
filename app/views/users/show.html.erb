@@ -1,1 +1,12 @@
-<h1>自分が投稿したKondate</h1>
+<h1>ログインユーザー詳細</h1>
+<h2>こんにちは！<%= @user.name %>さん</h2>
+<h2>自己紹介文
+<%= @user.introduction %>
+</h2>
+<%= attachment_image_tag @user, :profile_image, :fill, 40, 40, format: 'jpeg', fallback: "no_image.jpg" %>
+<% @lists.each do |list| %>
+<%= list.body %>
+<%= link_to"投稿編集", edit_list_path(@list) %>
+<% end %>
+
+<%= link_to "ユーザー情報編集", edit_user_path(@user) %>  

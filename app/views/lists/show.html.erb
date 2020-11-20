@@ -1,0 +1,6 @@
+<h1><%= @user.name %>さんのKondate</h1>
+<%= link_to attachment_image_tag(@user, :profile_image, :fill, 40, 40, format: 'jpeg', fallback: "no_image.jpg"), user_path(@user.id) %>
+<% @lists.each do |list| %>
+<%= list.body %>
+
+<% end %>

@@ -14,14 +14,10 @@
        
     <% if user_signed_in? %>
       <ul>
-         <li>
-          <%= link_to "みんなの献立", lists_path %>
-         </li>
-
-         <li>
-          <%= link_to "私のレパートリー", users_path %>
-         </li>
-         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+         <li><%= link_to "みんなの献立", lists_path %></li>
+         <li><%= link_to "ユーザー一覧", users_path %></li>
+         <li><%= link_to "My 情報", user_path(current_user) %> </li>
+         <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
       </ul>
     <% else %>
       <li>
