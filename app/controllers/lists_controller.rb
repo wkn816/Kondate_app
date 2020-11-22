@@ -16,24 +16,38 @@ class ListsController < ApplicationController
   def show
 		@user = User.find(params[:id])
     @lists = @user.lists
+    @list = List.find(params[:id])
+  end
+
+  def myshow
+    @user = User.find(params[:id])
+    @lists = @user.lists
   end
 
   def edit
-    if @book.user_id == current_user
-      @book = Book.find(params[:id])
-        render :edit
+    if @list.user_id == current_user
+      @list = List.find(params[:id])
+        redirect_to edit_list(@list)
       else
-        @book.user = current_user
+        @list.user = current_user
         render :edit
       end
   end
 
   def update
-  	
+  	@list = List.find(params[:id])
+    if @list.update(list_params)
+     flash[:notice] = "successfully"
+     redirect_to lists_path
+    else
+      render :edit
+    end
   end
 
   def delete
-  	
+  	@list = List.find(params[:id])
+    @list.destroy
+    redirect_to lists_path
   end
 
 private

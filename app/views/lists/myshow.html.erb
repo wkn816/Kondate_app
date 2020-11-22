@@ -1,0 +1,6 @@
+<h1>自分の投稿詳細</h1>
+<td><span><%= link_to @book.title, book_path(@book.id) %></span></td>
+   <td><spna><%= @book.body %></span></td>
+   <td> <span><% if @book.user == current_user %> </span> </td>
+   <td> <span><%= link_to "Edit", edit_book_path(@book) %> </span></td>
+   <td> <span><%= link_to "Destroy", book_path(@book), method: :delete %></span></td>
