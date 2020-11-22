@@ -9,15 +9,16 @@ class UsersController < ApplicationController
     @lists = @user.lists
   end
 
-
-  def create
-		
-  end
-
   def edit
-    @user = User.find(params[:id])
+    # @users = User.all
+    if @user == current_user
+      @user = User.find(params[:id])
+        render :edit
+      else
+        @user = current_user
+        render :edit
+      end
   end
-
 
 
   def update

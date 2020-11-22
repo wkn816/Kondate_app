@@ -1,4 +1,12 @@
 <h1>ユーザー情報編集</h1>
+<% if @user.errors.any? %>
+  <%= @user.errors.count %>件のエラーが発生しました
+  <% @user.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+<% end %>
+
+
 <%= form_with model:@user, local:true do |f| %>
 
   <label for="inputName">名前</label>

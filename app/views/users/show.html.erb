@@ -5,7 +5,7 @@
 </h2>
 <%= attachment_image_tag @user, :profile_image, :fill, 40, 40, format: 'jpeg', fallback: "no_image.jpg" %>
 <% @lists.each do |list| %>
-<%= lint_to list.body, edit_list_path(@list.id)%>
+<%= list.body %>
 <% end %>
 
 <%= link_to "ユーザー情報編集", edit_user_path(@user) %>  

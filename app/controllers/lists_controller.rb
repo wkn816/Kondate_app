@@ -19,15 +19,10 @@ class ListsController < ApplicationController
     @list = List.find(params[:id])
   end
 
-  def myshow
-    @user = User.find(params[:id])
-    @lists = @user.lists
-  end
-
   def edit
     if @list.user_id == current_user
       @list = List.find(params[:id])
-        redirect_to edit_list(@list)
+        redirect_to edit_list_path(@list)
       else
         @list.user = current_user
         render :edit
@@ -44,7 +39,7 @@ class ListsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
   	@list = List.find(params[:id])
     @list.destroy
     redirect_to lists_path
