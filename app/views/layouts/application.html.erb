@@ -7,26 +7,40 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
+<script src="https://kit.fontawesome.com/fc2857b7e6.js" crossorigin="anonymous"></script>
   </head>
   <header>
-       <h1>Kondate</h1>
-       
+
+  <h1>
+  <li class="fas fa-utensils">
+     <%= "Kondate" %>
+  </li>
+  </h1>   
+<div class="a">
     <% if user_signed_in? %>
       <ul>
-         <li><%= link_to "みんなの献立", lists_path %></li>
-         <li><%= link_to "ユーザー一覧", users_path %></li>
-         <li><%= link_to "My 情報", user_path(current_user) %> </li>
-         <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-      </ul>
+      <li class=""> 
+         <%= link_to "みんなの献立", lists_path, class:"btn btn-border" %>
+      </li>
+      <li class="">
+      <%= link_to "ユーザー一覧", users_path, class:"btn btn-border" %>
+      </li>
+      <li class=""> 
+      <%= link_to "My 情報", user_path(current_user), class:"btn btn-border" %> 
+      </li>
+      <li class="">
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"btn btn-border" %>
+      </li>
     <% else %>
       <li>
-        <%= link_to "新規登録", new_user_registration_path %>
+        <%= link_to "新規登録", new_user_registration_path, class:"btn btn-border" %>
       </li>
       <li>
-        <%= link_to "ログイン", new_user_session_path %>
+        <%= link_to "ログイン", new_user_session_path, class:"btn btn-border" %>
       </li>
+      </ul>
     <% end %>
+    </div>
   </header>
 
   <body>
