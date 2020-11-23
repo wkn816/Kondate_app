@@ -2,33 +2,37 @@
 <html>
   <head>
     <title>Kondate</title>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="jquery.min.js"></script>
+    <script src="app.js"></script>
 <script src="https://kit.fontawesome.com/fc2857b7e6.js" crossorigin="anonymous"></script>
   </head>
   <header>
+<nav class="navbar">
 
   <h1>
-  <li class="fas fa-utensils">
+  <div class="fas fa-utensils">
      <%= "Kondate" %>
-  </li>
-  </h1>   
-<div class="a">
+  </div>
+  </h1>  
+
     <% if user_signed_in? %>
-      <ul>
-      <li class=""> 
+      <ul class="a">
+      <li class="nav-item"> 
          <%= link_to "みんなの献立", lists_path, class:"btn btn-border" %>
       </li>
-      <li class="">
+      <li class="nav-item">
       <%= link_to "ユーザー一覧", users_path, class:"btn btn-border" %>
       </li>
-      <li class=""> 
+      <li class="nav-item"> 
       <%= link_to "My 情報", user_path(current_user), class:"btn btn-border" %> 
       </li>
-      <li class="">
+      <li class="nav-item">
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"btn btn-border" %>
       </li>
     <% else %>
@@ -40,7 +44,9 @@
       </li>
       </ul>
     <% end %>
-    </div>
+
+  
+</nav>
   </header>
 
   <body>

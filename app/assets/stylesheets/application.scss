@@ -13,7 +13,15 @@
  *= require_tree .
  *= require_self
  */
- *,
+ @import "bootstrap";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*,
 *:before,
 *:after {
   -webkit-box-sizing: inherit;
@@ -23,7 +31,7 @@
 html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  font-size: 62.5%;/*rem算出をしやすくするために*/
+  font-size: 62.5%; /*rem算出をしやすくするために*/
 }
 
 .btn,
@@ -48,12 +56,27 @@ button.btn {
   letter-spacing: 0.1em;
   color: #212529;
   border-radius: 0.5rem;
-}
-header {
-  background-color: lemonchiffon;
+  
 }
 
-/*その他と主な共通部分は省略*/
+.navbar{
+  background-color:#FFDBC9;
+  color:#FFF;
+ 
+  }
+  
+  .navbar-brand{
+  color:#FFF;
+  }
+  .navbar-brand:hover{
+  color:#ffff00;
+  }
+  .nav-link{
+  color:#FFF;
+  }
+  .nav-link:hover{
+  color:#ffff00;
+  }
 
 .btn-border {
   border: 2px solid #000;
@@ -73,16 +96,16 @@ header {
   width: 5px;
   height: 100%;
 
-  content: '';
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  content: "";
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 
   background: #000;
 }
 
 .btn-border:hover {
   color: #fff;
-  background: #000;
+  background: #EAD9FF;
 }
 
 .btn-border:hover:before {

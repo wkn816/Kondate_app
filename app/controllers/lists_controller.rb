@@ -20,8 +20,8 @@ class ListsController < ApplicationController
   end
 
   def edit
+    @list = List.find(params[:id])
     if @list.user_id == current_user
-      @list = List.find(params[:id])
         redirect_to edit_list_path(@list)
       else
         @list.user = current_user
