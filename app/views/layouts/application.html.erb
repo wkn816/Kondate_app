@@ -12,42 +12,48 @@
     <script src="app.js"></script>
 <script src="https://kit.fontawesome.com/fc2857b7e6.js" crossorigin="anonymous"></script>
   </head>
-  <header>
+<header>
+<div class="container">
 <nav class="navbar">
 
-  <h1>
+
+  <h1 class="title">
   <div class="fas fa-utensils">
      <%= "Kondate" %>
   </div>
   </h1>  
 
     <% if user_signed_in? %>
-      <ul class="a">
-      <li class="nav-item"> 
+      <ul class="nav">
+      <div class="btn-radius-gradient-wrap">
+
+      <li class="btn btn-radius-gradient"> 
          <%= link_to "みんなの献立", lists_path, class:"btn btn-border" %>
       </li>
-      <li class="nav-item">
-      <%= link_to "ユーザー一覧", users_path, class:"btn btn-border" %>
+      <li class="btn btn-radius-gradient">
+      <%= link_to "User", users_path, class:"btn btn-border" %>
       </li>
-      <li class="nav-item"> 
-      <%= link_to "My 情報", user_path(current_user), class:"btn btn-border" %> 
+      <li class="btn btn-radius-gradient"> 
+      <%= link_to "Information", user_path(current_user), class:"btn btn-border" %> 
       </li>
-      <li class="nav-item">
+      <li class="btn btn-radius-gradient">
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"btn btn-border" %>
       </li>
     <% else %>
-      <li>
+      <li class="btn btn-radius-gradient">
         <%= link_to "新規登録", new_user_registration_path, class:"btn btn-border" %>
       </li>
-      <li>
+      <li class="btn btn-radius-gradient">
         <%= link_to "ログイン", new_user_session_path, class:"btn btn-border" %>
       </li>
       </ul>
+      </div>
     <% end %>
 
   
 </nav>
-  </header>
+</div>
+</header>
 
   <body>
     <%= yield %>
