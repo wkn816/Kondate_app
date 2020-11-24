@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
- @import "bootstrap";
+@import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 * {
@@ -31,7 +31,12 @@
 html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  font-size: 62.5%; /*rem算出をしやすくするために*/
+  font-size: 62.5%;
+}
+
+/* 背景用*/
+body {
+  padding: 30px;
 }
 
 .btn,
@@ -56,58 +61,64 @@ button.btn {
   letter-spacing: 0.1em;
   color: #212529;
   border-radius: 0.5rem;
-  
 }
 
-.navbar{
-  background-color:#FFDBC9;
-  color:#FFF;
- 
-  }
-  
-  .navbar-brand{
-  color:#FFF;
-  }
-  .navbar-brand:hover{
-  color:#ffff00;
-  }
-  .nav-link{
-  color:#FFF;
-  }
-  .nav-link:hover{
-  color:#ffff00;
-  }
+.btn-radius-gradient-wrap {
+  display: inline-block;
 
-.btn-border {
-  border: 2px solid #000;
-  border-radius: 0;
-  background: #fff;
+  padding: 0.5rem;
 
-  -webkit-transform-style: preserve-3d;
+  border-radius: 100vh;
+  background: #f2f5f6;
+  background: -webkit-linear-gradient(
+    to top,
+    #f2f5f6 0%,
+    #e3eaed 37%,
+    #96a1a5 100%
+  );
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#f2f5f6),
+    color-stop(37%, #e3eaed),
+    to(#96a1a5)
+  );
+  background: -webkit-linear-gradient(
+    top,
+    #f2f5f6 0%,
+    #e3eaed 37%,
+    #96a1a5 100%
+  );
+  background: linear-gradient(to bottom, #f2f5f6 0%, #e3eaed 37%, #96a1a5 100%);
 
-  transform-style: preserve-3d;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2f5f6', endColorstr='#96a1a5', GradientType=0);
 }
 
-.btn-border:before {
-  position: absolute;
-  top: 0;
-  left: 0;
+a.btn-radius-gradient {
+  border-radius: 100vh;
+  background: #e3eaed;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#e3eaed),
+    to(#f2f5f6)
+  );
+  background: -webkit-linear-gradient(top, #e3eaed 0%, #f2f5f6 100%);
+  background: linear-gradient(to bottom, #e3eaed 0%, #f2f5f6 100%);
 
-  width: 5px;
-  height: 100%;
-
-  content: "";
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-
-  background: #000;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e3eaed', endColorstr='#f2f5f6', GradientType=0);
 }
 
-.btn-border:hover {
-  color: #fff;
-  background: #EAD9FF;
+a.btn-radius-gradient:hover {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
 }
 
-.btn-border:hover:before {
-  background: #fff;
+
+
+body{
+  background-image: url("kondate.jpg");
+  position: center;
 }
