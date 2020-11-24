@@ -28,7 +28,7 @@
       <div class="btn-radius-gradient-wrap">
 
       <li class="btn btn-radius-gradient"> 
-         <%= link_to "みんなの献立", lists_path, class:"btn btn-border" %>
+         <%= link_to "List", lists_path, class:"btn btn-border" %>
       </li>
       <li class="btn btn-radius-gradient">
       <%= link_to "User", users_path, class:"btn btn-border" %>
@@ -37,14 +37,14 @@
       <%= link_to "Information", user_path(current_user), class:"btn btn-border" %> 
       </li>
       <li class="btn btn-radius-gradient">
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"btn btn-border" %>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"btn btn-border" %>
       </li>
     <% else %>
       <li class="btn btn-radius-gradient">
-        <%= link_to "新規登録", new_user_registration_path, class:"btn btn-border" %>
+        <%= link_to "Signin", new_user_registration_path, class:"btn btn-border" %>
       </li>
       <li class="btn btn-radius-gradient">
-        <%= link_to "ログイン", new_user_session_path, class:"btn btn-border" %>
+        <%= link_to "Login", new_user_session_path, class:"btn btn-border" %>
       </li>
       </ul>
       </div>
