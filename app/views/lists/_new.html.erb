@@ -1,7 +1,16 @@
-<h1>今日の献立は？</h1>
+<div class="container">
+<div class="row">
+ <div class="col-md-2"></div>
+ <div class="col-md-3">
+<h1 class="create">Today's menu？
 <%= form_with model: list, local:true do |f| %>
   <%= f.text_area :body %><br>
 
-  <%= f.submit '投稿！' %>
+<input class="radius-pixel-30" type="submit" value="Post!"></a>
+
 
 <% end %>
+</h1>
+</div>
+</div>
+</div>
