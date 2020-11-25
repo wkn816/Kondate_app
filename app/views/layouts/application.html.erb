@@ -16,11 +16,11 @@
 <div class="container">
 <nav class="navbar">
 
-     <h1 class="title">
-       <div class="fas fa-utensils">
-        <%= "Kondate" %>
-       </div>
-     </h1>  
+   <div class="btn btn-border">
+     <h1 class="logo">
+        <%= link_to "Kondate", root_path %>
+     </h1>
+   </div>
 
 <div class="row">
     <% if user_signed_in? %>
