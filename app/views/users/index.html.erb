@@ -12,7 +12,8 @@
       <th>show</th>
     </tr>
 <% @users.each do |user| %>
-  <tr><td><%= attachment_image_tag user, :profile_image, :fill, 40, 40, format: 'jpeg', fallback: "no_image.jpg" %></td>
+  <tr>
+  <td><%= attachment_image_tag user, :profile_image, :fill, 40, 40, format: 'jpeg', fallback: "no_image.jpg" %></td>
   <td><%= user.name %></td>
   <td><%= link_to "Show", list_path(user.id) %></td>
   </tr>
