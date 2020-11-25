@@ -23,6 +23,11 @@
   box-sizing: border-box;
 }
 
+.logo,
+:visited {
+  color: black;
+}
+
 *,
 *:before,
 *:after {
@@ -36,6 +41,10 @@ html {
   font-size: 62.5%;
 }
 
+.logo {
+  font-family: fantasy;
+  font-size: 40px;
+}
 
 .btn,
 a.btn,
@@ -63,27 +72,27 @@ button.btn {
 
 .btn-radius-gradient-wrap {
   display: inline-block;
-  
+
   padding: 0.5rem;
-  
+
   border-radius: 100vh;
   background: #f2f5f6;
   background: -webkit-linear-gradient(to top,
-  #f2f5f6 0%,
-  #e3eaed 37%,
-  #96a1a5 100%);
+      #f2f5f6 0%,
+      #e3eaed 37%,
+      #96a1a5 100%);
   background: -webkit-gradient(linear,
-  left top,
-  left bottom,
-  from(#f2f5f6),
-  color-stop(37%, #e3eaed),
-  to(#96a1a5));
+      left top,
+      left bottom,
+      from(#f2f5f6),
+      color-stop(37%, #e3eaed),
+      to(#96a1a5));
   background: -webkit-linear-gradient(top,
-  #f2f5f6 0%,
-  #e3eaed 37%,
-  #96a1a5 100%);
+      #f2f5f6 0%,
+      #e3eaed 37%,
+      #96a1a5 100%);
   background: linear-gradient(to bottom, #f2f5f6 0%, #e3eaed 37%, #96a1a5 100%);
-  
+
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2f5f6', endColorstr='#96a1a5', GradientType=0);
 }
 
@@ -91,13 +100,13 @@ a.btn-radius-gradient {
   border-radius: 100vh;
   background: #e3eaed;
   background: -webkit-gradient(linear,
-  left top,
-  left bottom,
-  from(#e3eaed),
-  to(#f2f5f6));
+      left top,
+      left bottom,
+      from(#e3eaed),
+      to(#f2f5f6));
   background: -webkit-linear-gradient(top, #e3eaed 0%, #f2f5f6 100%);
   background: linear-gradient(to bottom, #e3eaed 0%, #f2f5f6 100%);
-  
+
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e3eaed', endColorstr='#f2f5f6', GradientType=0);
 }
 
@@ -106,6 +115,38 @@ a.btn-radius-gradient:hover {
   transform: scale(1.05);
 }
 
+a.btn-border {
+  border-radius: 0;
+}
+
+a.btn-border:before,
+a.btn-border:after {
+  position: absolute;
+
+  width: 100%;
+  height: 2px;
+
+  content: '';
+  -webkit-transition: all .3s;
+  transition: all .3s;
+
+  background: #000;
+}
+
+a.btn-border:before {
+  top: 0;
+  left: 0;
+}
+
+a.btn-border:after {
+  right: 0;
+  bottom: 0;
+}
+
+a.btn-border:hover:before,
+a.btn-border:hover:after {
+  width: 0;
+}
 
 
 body {
