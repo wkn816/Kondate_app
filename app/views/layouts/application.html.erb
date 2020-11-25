@@ -15,18 +15,14 @@
 <header>
 <div class="container">
 <nav class="navbar">
-
-   <div class="btn btn-border">
      <h1 class="logo">
         <%= link_to "Kondate", root_path %>
      </h1>
-   </div>
-
+ 
 <div class="row">
     <% if user_signed_in? %>
       <div class="btn-radius-gradient-wrap">
       <ul class="nav">
-
       <li class="btn btn-radius-gradient"> 
          <%= link_to "List", lists_path, class:"btn btn-border" %>
       </li>
