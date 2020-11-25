@@ -1,6 +1,29 @@
-<h1>ユーザー 一覧</h1>
+<div class="container">
+<div class="row">
+<div class="col-md-4"></div>
+ <div class="col-md-6">
+
+<div class="user-index">
+<h1 class="user-title">Users</h1>
+<table class="table table-sm">
+    <tr>
+      <th>icon</th>
+      <th>name</th>
+      <th>show</th>
+    </tr>
 <% @users.each do |user| %>
-  <%= attachment_image_tag user, :profile_image, :fill, 40, 40, format: 'jpeg', fallback: "no_image.jpg" %>
-  <%= user.name %>
-  <%= link_to "Show", list_path(user.id) %>  
+  <tr><td><%= attachment_image_tag user, :profile_image, :fill, 40, 40, format: 'jpeg', fallback: "no_image.jpg" %></td>
+  <td><%= user.name %></td>
+  <td><%= link_to "Show", list_path(user.id) %></td>
+  </tr>
 <% end %>
+</table>
+<%= paginate @users %>
+<ul>
+</div>
+
+
+</div>
+</div>
+</div>
+</div>
