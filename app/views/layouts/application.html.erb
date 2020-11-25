@@ -16,16 +16,16 @@
 <div class="container">
 <nav class="navbar">
 
+     <h1 class="title">
+       <div class="fas fa-utensils">
+        <%= "Kondate" %>
+       </div>
+     </h1>  
 
-  <h1 class="title">
-  <div class="fas fa-utensils">
-     <%= "Kondate" %>
-  </div>
-  </h1>  
-
+<div class="row">
     <% if user_signed_in? %>
-      <ul class="nav">
       <div class="btn-radius-gradient-wrap">
+      <ul class="nav">
 
       <li class="btn btn-radius-gradient"> 
          <%= link_to "List", lists_path, class:"btn btn-border" %>
@@ -39,7 +39,10 @@
       <li class="btn btn-radius-gradient">
       <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"btn btn-border" %>
       </li>
+      </div>
     <% else %>
+    <div class="btn-radius-gradient-wrap">
+
       <li class="btn btn-radius-gradient">
         <%= link_to "Signin", new_user_registration_path, class:"btn btn-border" %>
       </li>
@@ -48,14 +51,15 @@
       </li>
       </ul>
       </div>
+</div>
     <% end %>
-
-  
 </nav>
 </div>
 </header>
 
-  <body>
+<body>
+
+
     <%= yield %>
-  </body>
+</body>
 </html>
