@@ -1,12 +1,32 @@
-<h1>ログインユーザー詳細</h1>
-<h2>こんにちは！<%= @user.name %>さん</h2>
-<h2>自己紹介文
-<%= @user.introduction %>
-</h2>
-<%= attachment_image_tag @user, :profile_image, :fill, 40, 40, format: 'jpeg', fallback: "no_image.jpg" %>
-<% @lists.each do |list| %>
-<%= list.body %>
-<% end %>
+<div class="container">
+<div class="row">
+<div class="col-md-4">
 
+<h2>Hello！<%= @user.name %></h2>
+<table class="table table-sm">
+<tr>
+   <th>icon</th>
+   <th>My introduction</th>
+   <th></th>
+</tr>
+<tr>
+<td><%= attachment_image_tag @user, :profile_image, :fill, 40, 40, format: 'jpeg', fallback: "no_image.jpg" %></td>
+<td><%= @user.introduction %></td>
+</div>
+</tr>
+</table>
 <%= link_to "ユーザー情報編集", edit_user_path(@user) %>  
+</div>
 
+<div class="row">
+<div class="col-md-12">
+<div class="user-item">
+<h1 class="user-title">My Menu</h1>
+<% @lists.each do |list| %>
+<div class="user-menu-item"><%= list.body %></div>
+<% end %>
+</div>
+</div>
+</div>
+</div>
+</div>
