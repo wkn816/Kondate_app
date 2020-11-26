@@ -14,3 +14,16 @@
 .signup{
   padding: 310px;
 }
+
+body {
+  transition: all 1s;
+}
+
+.bodyfadeout {
+  opacity: 0;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
