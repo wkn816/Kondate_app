@@ -1,14 +1,27 @@
-<h1>投稿編集画面</h1>
+<div class="container">
+<div class="row">
+<div class="col-md-5"></div>
+ <div class="col-md-6">
+
+<div class="list-edit">
+<h1 class="edit-title">Edit Page</h1>
 <% if @list.errors.any? %>  
     <%= @list.errors.count %>error
     <% @list.errors.full_messages.each do |message| %>
     <%= message %>  
     <% end %>  
   <% end %>
-
+<div class="list-edit-form">
 <%= form_with model:@list, local:true do |f| %>
-  <label for="inputbody">内容</label>
+  <label for="inputbody"></label>
   <%= f.text_area :body, autofocus: true, id:"inputBody"%> <br>
-  <%= f.submit "更新" %>
+  <%= f.submit "Update Menu" %>
 <% end %>
-<%= link_to "削除", list_path(@list), method: :delete %>
+<%= link_to "Delete", list_path(@list), method: :delete %>
+</div>
+</div>
+
+
+</div>
+</div>
+</div>
