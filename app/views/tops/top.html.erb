@@ -2,12 +2,32 @@
 <div class="row">
  <div class="col-md-12">
 <div class="text">
+<div id="button1">
 <p>今日のご飯何にしよう・・・</p>
 <p>「今晩の献立のヒント」が見つかるかもしれません</p>
+<p>＜クリックで始める＞</p>
+</div>
  </div>
 </div>
 </div>
 </div>
 
 
+<script>
+var body = document.getElementsByTagName('body')[0];
+ 
+function fadeOut() {
+    body.classList.add('bodyfadeout');
+}
+ 
+function linkUrl() {
+    location.href = 'http://localhost:3000/lists'
+}
+var bt1 = document.getElementById('button1');
+bt1.addEventListener('click', function() {
+    fadeOut();
+    setTimeout(linkUrl, 1500);
+});
+
+</script>
 
