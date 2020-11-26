@@ -1,8 +1,30 @@
-<h1><%= @user.name %>さんのKondate</h1>
+<div class="container">
+<div class="row">
+<div class="col-md-5">
 <%= link_to attachment_image_tag(@user, :profile_image, :fill, 40, 40, format: 'jpeg', fallback: "no_image.jpg"), user_path(@user.id) %>
-<%= @list.body %>
+ </div>
+ <div class="col-md-6">
 
+<div class="list-show">
+<h1><%= @user.name %>さんのKondate</h1>
+
+<table class="table table-sm">
+<tr>
+   <th>Menu</th>
+   <th></th>
+   <th></th>
+</tr>
+<tr>
+<td><%= @list.body %></td>
 <% if @list.user == current_user %>
-<%= link_to "Edit", edit_list_path(@list) %>
-<%= link_to "Destroy", list_path(@list), method: :delete %>
+<td><%= link_to "Edit", edit_list_path(@list) %></td>
+<td><%= link_to "Destroy", list_path(@list), method: :delete %></td>
 <% end %>
+</tr>
+</table>
+</div>
+
+
+</div>
+</div>
+</div>
