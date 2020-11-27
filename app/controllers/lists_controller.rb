@@ -22,20 +22,20 @@ class ListsController < ApplicationController
   def edit
     @list = List.find(params[:id])
     if @list.user_id == current_user
-        redirect_to edit_list_path(@list)
-      else
-        @list.user = current_user
-        render :edit
-      end
+       redirect_to edit_list_path(@list)
+    else
+       @list.user = current_user
+       render :edit
+    end
   end
 
   def update
   	@list = List.find(params[:id])
     if @list.update(list_params)
-     flash[:notice] = "successfully"
-     redirect_to lists_path
+       flash[:notice] = "successfully"
+       redirect_to lists_path
     else
-      render :edit
+       render :edit
     end
   end
 
@@ -53,8 +53,6 @@ private
 
   def correct_user
     @book = Book.find(params[:id])
-    # redirect_to user_path(current_user.id) unless params[:id] == cur÷rent_user.id
     redirect_to(books_url) unless @book.user == current_user
-
   end
 end
