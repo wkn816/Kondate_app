@@ -24,6 +24,7 @@
         <% if user_signed_in? %>
         <div class="btn-radius-gradient-wrap">
           <ul class="nav">
+           <div class="col-xs-12">
             <li class="btn btn-radius-gradient">
               <%= link_to "List", lists_path, class:"btn btn-border" %>
             </li>
@@ -46,6 +47,7 @@
           <li class="btn btn-radius-gradient">
             <%= link_to "Login", new_user_session_path, class:"btn btn-border" %>
           </li>
+          </div>
           </ul>
         </div>
       </div>

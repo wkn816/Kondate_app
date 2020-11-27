@@ -1,9 +1,9 @@
 <div class="container">
    <div class="row">
-      <div class="col-md-5">
+      <div class="col-12 col-md-5">
          <%= link_to attachment_image_tag(@user, :profile_image, :fill, 40, 40, format: 'jpeg', fallback: "no_image.jpg"), user_path(@user.id) %>
       </div>
-      <div class="col-md-6">
+      <div class="col-12 col-md-6">
 
          <div class="list-show">
             <h1><%= @user.name %>さんのKondate</h1>
