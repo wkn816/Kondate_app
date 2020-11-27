@@ -1,60 +1,62 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Kondate</title>
 
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Kondate</title>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script src="jquery.min.js"></script>
-    <script src="app.js"></script>
-<script src="https://kit.fontawesome.com/fc2857b7e6.js" crossorigin="anonymous"></script>
-  </head>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <script src="jquery.min.js"></script>
+  <script src="app.js"></script>
+  <script src="https://kit.fontawesome.com/fc2857b7e6.js" crossorigin="anonymous"></script>
+</head>
 <header>
-<div class="container">
-<nav class="navbar">
-     <h1 class="logo">
+  <div class="container">
+    <nav class="navbar">
+      <h1 class="logo">
         <%= link_to "Kondate", root_path %>
-     </h1>
- 
-<div class="row">
-    <% if user_signed_in? %>
-      <div class="btn-radius-gradient-wrap">
-      <ul class="nav">
-      <li class="btn btn-radius-gradient"> 
-         <%= link_to "List", lists_path, class:"btn btn-border" %>
-      </li>
-      <li class="btn btn-radius-gradient">
-      <%= link_to "User", users_path, class:"btn btn-border" %>
-      </li>
-      <li class="btn btn-radius-gradient"> 
-      <%= link_to "Information", user_path(current_user), class:"btn btn-border" %> 
-      </li>
-      <li class="btn btn-radius-gradient">
-      <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"btn btn-border" %>
-      </li>
-      </div>
-    <% else %>
-    <div class="btn-radius-gradient-wrap">
+      </h1>
 
-      <li class="btn btn-radius-gradient">
-        <%= link_to "Signin", new_user_registration_path, class:"btn btn-border" %>
-      </li>
-      <li class="btn btn-radius-gradient">
-        <%= link_to "Login", new_user_session_path, class:"btn btn-border" %>
-      </li>
-      </ul>
+      <div class="row">
+        <% if user_signed_in? %>
+        <div class="btn-radius-gradient-wrap">
+          <ul class="nav">
+            <li class="btn btn-radius-gradient">
+              <%= link_to "List", lists_path, class:"btn btn-border" %>
+            </li>
+            <li class="btn btn-radius-gradient">
+              <%= link_to "User", users_path, class:"btn btn-border" %>
+            </li>
+            <li class="btn btn-radius-gradient">
+              <%= link_to "Information", user_path(current_user), class:"btn btn-border" %>
+            </li>
+            <li class="btn btn-radius-gradient">
+              <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"btn btn-border" %>
+            </li>
+        </div>
+        <% else %>
+        <div class="btn-radius-gradient-wrap">
+
+          <li class="btn btn-radius-gradient">
+            <%= link_to "Signin", new_user_registration_path, class:"btn btn-border" %>
+          </li>
+          <li class="btn btn-radius-gradient">
+            <%= link_to "Login", new_user_session_path, class:"btn btn-border" %>
+          </li>
+          </ul>
+        </div>
       </div>
-</div>
-    <% end %>
-</nav>
-</div>
+      <% end %>
+    </nav>
+  </div>
 </header>
 
 <body>
 
-    <%= yield %>
+  <%= yield %>
 </body>
+
 </html>

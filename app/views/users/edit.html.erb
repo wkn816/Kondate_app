@@ -1,32 +1,32 @@
 <div class="container">
-<div class="row">
-<div class="col-md-4"></div>
- <div class="col-md-6">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-6">
 
-<div class="user-edit">
-<h1 class="user-edit-title">Setting</h1>
-<% if @user.errors.any? %>
-  <%= @user.errors.count %>件のエラーが発生しました
-  <% @user.errors.full_messages.each do |message| %>
-    <%= message %>
-  <% end %>
-<% end %>
+      <div class="user-edit">
+        <h1 class="user-edit-title">Setting</h1>
+        <% if @user.errors.any? %>
+        <%= @user.errors.count %>件のエラーが発生しました
+        <% @user.errors.full_messages.each do |message| %>
+        <%= message %>
+        <% end %>
+        <% end %>
 
-<div class="user-edit-form">
-<%= form_with model:@user, local:true do |f| %>
-  <label for="inputName">名前</label><br>
-  <%= f.text_field :name, autofocus: true, id:"inputName"%> <br>
-  <label for="inputImage">アイコン</label> <br>
-  <%= attachment_image_tag @user, :profile_image, :fill, 60, 60 %>
-  <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %> <br>
-  <label for="inputintroduction">introduction</label><br>
-  <%= f.text_area :introduction, autofocus: true, id:"inputName"%> <br>
-  <%= f.submit "Update User" %>
-<% end %>
-</div>
+        <div class="user-edit-form">
+          <%= form_with model:@user, local:true do |f| %>
+          <label for="inputName">名前</label><br>
+          <%= f.text_field :name, autofocus: true, id:"inputName"%> <br>
+          <label for="inputImage">アイコン</label> <br>
+          <%= attachment_image_tag @user, :profile_image, :fill, 60, 60 %>
+          <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %> <br>
+          <label for="inputintroduction">introduction</label><br>
+          <%= f.text_area :introduction, autofocus: true, id:"inputName"%> <br>
+          <%= f.submit "Update User" %>
+          <% end %>
+        </div>
 
 
-</div>
-</div>
-</div>
+      </div>
+    </div>
+  </div>
 </div>

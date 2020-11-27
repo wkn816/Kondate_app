@@ -1,18 +1,18 @@
 <%= render 'lists/new', list: @list%>
 <div class="container">
-<div class="row">
-<div class="col-md-4"></div>
- <div class="col-md-6">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-6">
 
-<div class="menu"> 
-<h1 class="menu-title">Menu List</h1>
-<% @lists.each do |list| %>
-<p class="menu-item"><%= link_to list.body, list_path(list.id)%></p>
-<% end %>
-</div>
+      <div class="menu">
+        <h1 class="menu-title">Menu List</h1>
+        <% @lists.each do |list| %>
+        <p class="menu-item"><%= link_to list.body, list_path(list.id)%></p>
+        <% end %>
+      </div>
 
-</div>
-</div>
+    </div>
+  </div>
 </div>
 
 
