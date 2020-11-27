@@ -16,13 +16,17 @@
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
-a:visited { color:black; text-decoration:none }
+
+a:visited {
+  color: black;
+  text-decoration: none
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
- 
+
 }
 
 .logo,

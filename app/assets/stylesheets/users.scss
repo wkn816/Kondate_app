@@ -1,33 +1,40 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.user-index{
- padding-top: 180px;
+.user-index {
+  padding-top: 180px;
 }
-.user-title{
+
+.user-title {
   margin: 0 0 30px 130px;
   font-size: 30px;
 }
-.user-item{
-padding-top: 180px;
+
+.user-item {
+  padding-top: 180px;
 }
-.user-title{
+
+.user-title {
   font-size: 30px;
   margin: 0 0 30px 110px;
 }
+
 .user-menu-item {
   font-size: 20px;
   margin: 5px 0 0 120px;
   font-family: "HiraginoSans-W0"
 }
-.user-edit{
+
+.user-edit {
   padding-top: 180px;
 }
-.user-edit-title{
+
+.user-edit-title {
   font-size: 30px;
   margin: 0 0 30px 110px;
 }
-.user-edit-form{
+
+.user-edit-form {
   font-size: 20px;
   margin: 5px 0 0 80px;
   font-family: "HiraginoSans-W0"
